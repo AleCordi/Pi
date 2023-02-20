@@ -1,0 +1,44 @@
+# Transmission app
+version: "2.1"
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    network_mode: "host"
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+      - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
+      - USER=pi #optional
+      - PASS=pi #optional
+      - HOST_WHITELIST=8.8.8.8
+    volumes:
+      - /home/pi/Docker/Transmission:/config
+      - /home/pi/Torrent/Complete:/downloads
+      - /home/pi/Torrent/Watch:/watch
+    dns: 
+      - 8.8.8.8
+    ports:
+      - 9092:9092
+      - 51666:51666
+      - 51666:51666/udp 
+    restart: unless-stopped
+
+# Plex app
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+    volumes:
+      - /home/pi/Docker/Plex:/config
+      - /home/pi/Torrent/Complete/TvSeries:/tv
+      - /home/pi/Torrent/Complete/Movies:/movies
+      - /home/pi/Torrent/Complete/Cartoon:/cartoon
+    restart: unless-stopped
