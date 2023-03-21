@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import datetime
-url = "https://www.google.it/"
+url = "https://www.brewgruff.it"
 timeout = 20
 try:
 	request = requests.get(url, timeout=timeout)
