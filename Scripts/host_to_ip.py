@@ -3,3 +3,6 @@
 with open('/Users/alemacco/Desktop/list/server_list.txt') as f:
     servers = f.read().splitlines()
     print(servers)
+for server in servers:
+    server.split(".")[0]
+    print(server)
