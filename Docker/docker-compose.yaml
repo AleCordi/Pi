@@ -38,7 +38,7 @@ services:
       - VERSION=docker
     volumes:
       - /home/pi/Docker/Plex:/config
-      - /home/pi/Torrent/Complete/TvSeries:/tv
-      - /home/pi/Torrent/Complete/Movies:/movies
-      - /home/pi/Torrent/Complete/Cartoon:/cartoon
+      - /home/pi/Torrent/TvSeries:/tv
+      - /home/pi/Torrent/Movies:/movies
+      - /home/pi/Torrent/Cartoon:/cartoon
     restart: unless-stopped
