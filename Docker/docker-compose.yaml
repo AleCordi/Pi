@@ -9,7 +9,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Rome
-      - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
       - USER=pi #optional
       - PASS=pi #optional
       - HOST_WHITELIST=8.8.8.8
