@@ -26,8 +26,6 @@ services:
     restart: unless-stopped
 
 # Plex app
-version: "2.1"
-services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
