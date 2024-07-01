@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  send-email:
+    build: .
+    container_name: send-email
+    volumes:
+      - ./logs:/usr/src/app
+    restart: unless-stopped
